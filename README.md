@@ -7,4 +7,4 @@ I already try on "https://dartpad.dev/?" but it's not support 'dart:io' lib.So i
 ## 2 - Joke
 I already build an apk file and upload on Google drive: "https://drive.google.com/file/d/176EQfFMCzunvzhbSbh-MqYAhlLZnnpd1/view?usp=sharing". I suggest test this app on real device or simulator device because it's have cache manage task, u can ez to clear cache. If u want to try on web IDE, I suggest "https://flutlab.io/", I haven't try to run this app on this web yet, but I think it's okay
 
-![Banner](https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.15752-9/381648502_273622892215153_2905136888059332710_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=etSGHYbCcIgAX_FWiyQ&_nc_oc=AQl0UvehXmjom5V5WyXCzQLd12Zq8weOBMxlh-QoDyuJVhCs4MVVRLUybKUykN89iuU&_nc_ht=scontent.fsgn5-10.fna&oh=03_AdSSH-JjfSe8wp9sHsrnYQwGoIBbOYW3IMNbu_wGa0qBsQ&oe=653B1B00)
+![Banner](https://scontent.fsgn5-15.fna.fbcdn.net/v/t1.15752-9/381768539_861403155551922_5934247180060544595_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=ae9488&_nc_ohc=aOhpLrrB1TIAX9yNG7B&_nc_ht=scontent.fsgn5-15.fna&oh=03_AdTjsL-3BxHW4JoMRoz73agDLOuBp_2fPKxNDj2jU6Xv3w&oe=653B4B8D)
