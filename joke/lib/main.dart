@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joke/cubit/main_cubit.dart';
+import 'package:joke/global_color.dart';
 import 'package:joke/global_img.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joke/model/Joke.dart';
@@ -68,21 +69,21 @@ class _MainAppState extends State<MainApp> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  decoration: const BoxDecoration(color: Colors.amber),
+                  decoration: BoxDecoration(color: GlobalColors.green),
                   padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).size.height * 0.05,
                       top: MediaQuery.of(context).size.height * 0.05),
                   child: const Column(children: [
                     Text(
                       "A joke a day keeps doctor away",
-                      style: TextStyle(fontSize: 22),
+                      style: TextStyle(fontSize: 22, color: Colors.white),
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     Text(
                       "If you joke wrong way, your teeth have to pay. (Serious)",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 12, color: Colors.white),
                     )
                   ]),
                 ),
@@ -90,8 +91,8 @@ class _MainAppState extends State<MainApp> {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.08,
                         right: MediaQuery.of(context).size.width * 0.08,
-                        bottom: MediaQuery.of(context).size.height * 0.05,
-                        top: MediaQuery.of(context).size.height * 0.05),
+                        bottom: MediaQuery.of(context).size.height * 0.08,
+                        top: MediaQuery.of(context).size.height * 0.1),
                     child: BlocBuilder<MainCubit, MainState>(
                       builder: (context, state) {
                         final index = state.data!.index;
@@ -106,17 +107,19 @@ class _MainAppState extends State<MainApp> {
                       const Spacer(),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
+                            maximumSize: Size.fromWidth(200),
+                              backgroundColor: GlobalColors.blue,
                               shape: const ContinuousRectangleBorder()),
                           onPressed: () {context.read<MainCubit>().handle();},
-                          child: const Text("This is Funny!")),
-                      const Spacer(),
+                          child: const Text("This is Funny!", style: TextStyle(color: Colors.white))),
+                      const SizedBox(width: 40,),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.red,
+                            maximumSize: Size.fromWidth(160),
+                              backgroundColor: GlobalColors.green,
                               shape: const ContinuousRectangleBorder()),
                           onPressed: () {context.read<MainCubit>().handle();},
-                          child: const Text("This is not Funny")),
+                          child: const Text("This is not Funny", style: TextStyle(color: Colors.white),)),
                       const Spacer(),
                     ],
                   ),
@@ -132,6 +135,7 @@ class _MainAppState extends State<MainApp> {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  SizedBox(height: 15,),
                   Text("Copyright 2022 HLS")
                 ])
               ],

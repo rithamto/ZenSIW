@@ -6,6 +6,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:joke/global_constant.dart';
 import 'package:joke/model/Joke.dart';
 
 part 'main_state.dart';
@@ -16,7 +17,7 @@ class MainCubit extends Cubit<MainState> {
 
   Future<int?> readCache() async {
     final cacheManager = DefaultCacheManager();
-    final files = await cacheManager.getFileFromCache('JokeCache');
+    final files = await cacheManager.getFileFromCache(GlobalConstants.Joke);
     if(files == null){
       return null;
     }else{
@@ -32,7 +33,7 @@ class MainCubit extends Cubit<MainState> {
     final str = index.toString();
     final convert = Uint8List.fromList(utf8.encode(str));
     final cacheManager = DefaultCacheManager();
-    cacheManager.putFile('JokeCache', convert, maxAge: const Duration(days: 7));
+    cacheManager.putFile(GlobalConstants.Joke, convert, maxAge: const Duration(days: 7));
   }
 
   void init() async {
