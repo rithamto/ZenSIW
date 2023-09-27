@@ -88,10 +88,10 @@ class _MainAppState extends State<MainApp> {
                   ]),
                 ),
                 Container(
+                    height: MediaQuery.of(context).size.height * 0.45,
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.08,
                         right: MediaQuery.of(context).size.width * 0.08,
-                        bottom: MediaQuery.of(context).size.height * 0.08,
                         top: MediaQuery.of(context).size.height * 0.1),
                     child: BlocBuilder<MainCubit, MainState>(
                       builder: (context, state) {
@@ -100,26 +100,37 @@ class _MainAppState extends State<MainApp> {
                       },
                     )),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(bottom: 35),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Spacer(),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            maximumSize: Size.fromWidth(200),
+                              maximumSize: Size.fromWidth(200),
                               backgroundColor: GlobalColors.blue,
                               shape: const ContinuousRectangleBorder()),
-                          onPressed: () {context.read<MainCubit>().handle();},
-                          child: const Text("This is Funny!", style: TextStyle(color: Colors.white))),
-                      const SizedBox(width: 40,),
+                          onPressed: () {
+                            context.read<MainCubit>().handle();
+                          },
+                          child: const Text("This is Funny!",
+                              style: TextStyle(color: Colors.white))),
+                      const SizedBox(
+                        width: 40,
+                      ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            maximumSize: Size.fromWidth(160),
+                              maximumSize: Size.fromWidth(160),
+                              padding: EdgeInsets.symmetric(horizontal: 20),
                               backgroundColor: GlobalColors.green,
                               shape: const ContinuousRectangleBorder()),
-                          onPressed: () {context.read<MainCubit>().handle();},
-                          child: const Text("This is not Funny", style: TextStyle(color: Colors.white),)),
+                          onPressed: () {
+                            context.read<MainCubit>().handle();
+                          },
+                          child: const Text(
+                            "This is not Funny",
+                            style: TextStyle(color: Colors.white),
+                          )),
                       const Spacer(),
                     ],
                   ),
@@ -135,7 +146,9 @@ class _MainAppState extends State<MainApp> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   Text("Copyright 2022 HLS")
                 ])
               ],
